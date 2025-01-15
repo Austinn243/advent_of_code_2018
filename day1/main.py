@@ -7,7 +7,6 @@ https://adventofcode.com/2018/day/1
 from itertools import cycle
 from os import path
 
-
 INPUT_FILE = "input.txt"
 
 
@@ -27,7 +26,7 @@ def get_final_frequency(frequencies: list[int]) -> int:
 def find_first_repeat_frequency(frequencies: list[int]) -> int:
     """Find the first frequency that appears twice."""
 
-    seen_frequencies = set([0])
+    seen_frequencies = {0}
     current_frequency = 0
 
     for frequency_change in cycle(frequencies):
@@ -55,7 +54,6 @@ def main() -> None:
 
     first_repeat_frequency = find_first_repeat_frequency(frequencies)
     print(f"The first frequency that appears twice is {first_repeat_frequency}.")
-
 
 
 if __name__ == "__main__":
